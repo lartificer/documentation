@@ -1,5 +1,5 @@
 ---
-title: Intermediate
+title: News
 taxonomy:
     category: docs
 ---

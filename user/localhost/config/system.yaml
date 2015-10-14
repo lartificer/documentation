@@ -8,3 +8,6 @@ twig:
 
 debugger:
   enabled: false
+
+cache:
+  enabled: false

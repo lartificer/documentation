@@ -3,12 +3,20 @@
     color: $white;
     text-align: center;
 
-    padding: 1rem;
+    padding-top: 1rem;
 
     a {
         display: inline-block;
     }
 
+    #logo {
+        width: 128px;
+        
+        img {
+            max-width: 100%;
+        }
+    }
+    
     #logo-svg {
         @extend .default-animation;
         width: $logo-width;
@@ -21,12 +29,18 @@
     }
 }
 
+.searchbox-wrapper {
+    background: $core-accent;
+    padding: 1rem;
+    margin-top: 0.8rem;
+}
+
 .searchbox {
     margin-top: 0.5rem;
     position: relative;
 
     border: 1px solid lighten($header-bg, 5%);
-    background: darken($header-bg,5%);
+    background: darken($core-accent,5%);
     border-radius: 4px;
 
     label {
