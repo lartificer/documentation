@@ -38,6 +38,20 @@
     {% endblock %}
 </head>
 <body class="searchbox-hidden {{ page.header.body_classes }}" data-url="{{ page.route }}">
+
+    {% if theme_config.github.position == 'top' or config.plugins.breadcrumbs.enabled %}
+        <div id="top-bar">
+            {% if theme_config.github.position == 'top' %}
+                <div id="top-github-link">
+                    {% include 'partials/github_link.html.twig' %}
+                </div>
+            {% endif %}
+
+            {% if config.plugins.breadcrumbs.enabled %}
+                {% include 'partials/breadcrumbs.html.twig' %}
+            {% endif %}
+        </div>
+    {% endif %}
     {% block sidebar %}
     <nav id="sidebar">
         <div id="header">
@@ -63,20 +77,6 @@
         <div class="padding">
             <a href="#" id="sidebar-toggle" data-sidebar-toggle><i class="fa fa-2x fa-bars"></i></a>
 
-            {% if theme_config.github.position == 'top' or config.plugins.breadcrumbs.enabled %}
-            <div id="top-bar">
-                {% if theme_config.github.position == 'top' %}
-                <div id="top-github-link">
-                {% include 'partials/github_link.html.twig' %}
-                </div>
-                {% endif %}
-
-                {% if config.plugins.breadcrumbs.enabled %}
-                {% include 'partials/breadcrumbs.html.twig' %}
-                {% endif %}
-            </div>
-            {% endif %}
-
             {% block content %}{% endblock %}
 
             {% block footer %}
@@ -86,7 +86,7 @@
             {% endblock %}
 
         </div>
-        {% block navigation %}{% endblock %}
+        <!--{% block navigation %}{% endblock %}-->
     </section>
     {% endblock %}
     {% block analytics %}{% include 'partials/analytics.html.twig' %}{% endblock %}
