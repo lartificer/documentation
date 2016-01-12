@@ -1,0 +1,12 @@
+#body-inner {
+    max-width: 1000px;
+}
+
+#chapter #body-inner {
+    max-width: 1200px; 
+}
+
+#body .inline-image {
+    display: inline-block;
+    margin-right:10px;
+}
